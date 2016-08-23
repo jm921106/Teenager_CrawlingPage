@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <% include nav/header.ejs %>
+    <style>
+        table > tbody > tr > td {
+            text-align: center;
+        }
+    </style>
+</head>
+<!-- END HEAD -->
+
+<body class="page-container-bg-solid">
+
+<div class="page-wrapper">
+    <% include nav/nav.ejs %>
+    <div class="page-wrapper-row full-height">
+        <div class="page-wrapper-middle">
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <!-- BEGIN PAGE CONTENT BODY -->
+                    <div class="page-content">
+                        <div class="container">
+                            <!-- BEGIN PAGE BREADCRUMBS -->
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/tab1_home">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>General</span>
+                                </li>
+                            </ul>
+                            <!-- END PAGE BREADCRUMBS -->
+                            <!-- BEGIN PAGE CONTENT INNER -->
+                            <div class="page-content-inner">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="note note-success">
+                                            <h4>
+                                                오늘의 청소년 ? > 나의 삶의 질 측정
+                                            </h4>
+                                        </div>
+
+                                        <!-- BEGIN TABLE PORTLET-->
+                                        <div class="portlet box bg-blue-soft">
+                                            <div class="portlet-title">
+                                                <div class="caption" style="margin: 3%">
+                                                    <h3><i class="fa fa-cogs"></i>청소년 삶의 질 측정 문진표 <i
+                                                                class="fa fa-cogs"></i></h3> <br>
+                                                    다음은 지난 한 달 동안 여러분이 다음과 같은 부분에서 얼마나 어려움을 겪었는지 알아보기 위한 것입니다. <br><br>
+                                                    각 문항을 읽고 자신의 생각과 일치하는 곳에 <strong>V</strong>표 해 주십시오.<br><br>
+                                                </div>
+                                                <div class="tools">
+                                                    <a href="/tab4_compare" class="reload"> </a>
+                                                </div>
+                                            </div>
+
+                                            <!--  STRART TABLE & FORM  -->
+
+                                            <div class="portlet-body" style="margin: 0%">
+                                                <form method="post" action="/survey_result">
+
+                                                    <h3>정확한 조사를 위해서, 나이와 성별을 입력해 주세요.</h3>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <h3><label for="grade">grade : </label></h3>
+                                                                <select class="form-control" name="grade" id="grade">
+                                                                    <option>초등학생</option>
+                                                                    <option>중학생</option>
+                                                                    <option>고등학생</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr/>
+
+
+                                                    <table class="table table-bordered table-striped table-condensed flip-content">
+                                                        <thead class="flip-content">
+                                                        <tr>
+                                                            <th width="5%">
+                                                                <center>번호</center>
+                                                            </th>
+                                                            <th>
+                                                                <center>내용</center>
+                                                            </th>
+                                                            <th class="numeric" width="10%">
+                                                                <center>전혀아니다.</center>
+                                                            </th>
+                                                            <th class="numeric" width="10%">
+                                                                <center>거의아니다.</center>
+                                                            </th>
+                                                            <th class="numeric" width="10%">
+                                                                <center>가끔.</center>
+                                                            </th>
+                                                            <th class="numeric" width="10%">
+                                                                <center>자주그렇다.</center>
+                                                            </th>
+                                                            <th class="numeric" width="10%">
+                                                                <center>언제나그렇다.</center>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <td> 1.</td>
+                                                            <td> 100미터 이상 걷기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric" ><label><input type="radio"
+                                                                                                  name="index1"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index1"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index1"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index1"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index1"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td> 2.</td>
+                                                            <td> 뛰기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index2"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index2"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index2"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index2"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index2"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 3.</td>
+                                                            <td> 스포츠 활동이나 운동에 참여하기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index3"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index3"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index3"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index3"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index3"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 4.</td>
+                                                            <td> 무거운 물건을 들기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index4"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index4"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index4"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index4"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index4"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 5.</td>
+                                                            <td> 혼자서 목욕이나 샤워하기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index5"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index5"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index5"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index5"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index5"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 6.</td>
+                                                            <td> 집의 허드렛 일(책상정리나 청소)을 하기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index6"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index6"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index6"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index6"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index6"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 7.</td>
+                                                            <td> 아프거나 통증이 있다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index7"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index7"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index7"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index7"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index7"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 8.</td>
+                                                            <td> 기운이 없다</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index8"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index8"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index8"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index8"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index8"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 9.</td>
+                                                            <td> 두렵거나 무섭다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index9"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index9"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index9"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index9"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index9"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 10.</td>
+                                                            <td> 슬프거나 우울하다</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index10"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index10"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index10"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index10"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index10"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 11.</td>
+                                                            <td> 화가 난다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index11"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index11"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index11"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index11"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index11"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 12.</td>
+                                                            <td> 잠을 자기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index12"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index12"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index12"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index12"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index12"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 13.</td>
+                                                            <td> 나에게 어떤 일이 일어날 지 걱정된다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index13"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index13"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index13"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index13"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index13"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 14.</td>
+                                                            <td> 다른 친구들과 사이 좋게 지내기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index14"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index14"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index14"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index14"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index14"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 15.</td>
+                                                            <td> 다른 친구들이 나와 친구가 되기를 원하지 않느다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index15"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index15"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index15"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index15"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index15"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 16.</td>
+                                                            <td> 다른 친구들이 나를 놀린다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index16"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index16"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index16"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index16"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index16"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 17.</td>
+                                                            <td> 내 또래의 다른 친구들이 할 수 있는 것을 나는 못한다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index17"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index17"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index17"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index17"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index17"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 18.</td>
+                                                            <td> 또래 친구들이 하는 행동을 처지지 않고 따라 하기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index18"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index18"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index18"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index18"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index18"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 19.</td>
+                                                            <td> 수업 시간에 집중하기가 힘들다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index19"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index19"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index19"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index19"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index19"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 20.</td>
+                                                            <td> 뭔가를 잘 잊어버린다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index20"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index20"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index20"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index20"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index20"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 21.</td>
+                                                            <td> 학교 수업을 처지지 않고 따라가기 어렵다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index21"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index21"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index21"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index21"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index21"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 22.</td>
+                                                            <td> 몸이 좋지 않아 학교를 자주 빠진다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index22"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index22"
+                                                                                                  value='3'>
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index22"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index22"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index22"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 23.</td>
+                                                            <td> 병원에 가기 위해 학교를 자주 빠진다.</td>
+                                                            <div class="radio">
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index23"
+                                                                                                  value="4">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index23"
+                                                                                                  value="3">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index23"
+                                                                                                  value="2">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index23"
+                                                                                                  value="1">
+                                                                    </label></td>
+                                                                <td class="numeric"><label><input type="radio"
+                                                                                                  name="index23"
+                                                                                                  value="0">
+                                                                    </label></td>
+                                                            </div>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <input type="submit" value="문 진 완 료"
+                                                           class="btn btn-primary btn-block input-lg"
+                                                           data-icon="glyphicon-pencil"
+                                                           style="font-size: 20px; height: 20%"/>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- END SAMPLE TABLE PORTLET-->
+
+                                        <% include nav/gachon_copyright.ejs %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTENT BODY -->
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+                <a href="javascript:;" class="page-quick-sidebar-toggler">
+                    <i class="icon-login"></i>
+                </a>
+            </div>
+            <!-- END CONTAINER -->
+
+        </div>
+    </div>
+
+    <% include nav/footer_copyright.ejs %>
+</div>
+
+<% include nav/footer.ejs %>
+
+<script>
+//    $(document).ready(function () {
+//        $(".surveyRadio").click(function () {
+//            if($(".surveyRadio ~ .surveyRadio input").selected) {
+//                $(".surveyRadio ~ .surveyRadio input").attr('checked', false);
+//            }
+//
+//            $(".surveyRadio input").attr('checked', true);
+//        })
+//    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <% include nav/header.ejs %>
+</head>
+<!-- END HEAD -->
+
+<body class="page-container-bg-solid">
+
+<div class="page-wrapper">
+    <% include nav/nav.ejs %>
+    <div class="page-wrapper-row full-height">
+        <div class="page-wrapper-middle">
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <!-- BEGIN PAGE CONTENT BODY -->
+                    <div class="page-content">
+                        <div class="container">
+                            <!-- BEGIN PAGE BREADCRUMBS -->
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="/tab_home">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>General</span>
+                                </li>
+                            </ul>
+                            <!-- END PAGE BREADCRUMBS -->
+                            <!-- BEGIN PAGE CONTENT INNER -->
+                            <div class="page-content-inner">
+
+                                <div class="note note-success">
+                                    <h4>
+                                        오늘의 청소년 ? > 오늘의 분석
+                                    </h4>
+                                </div>
+
+                                <!-- START FROM -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4>검색하려는 조건을 설정해 주세요.</h4>
+                                            </div>
+                                            <!-- /.panel-heading -->
+                                            <div class="panel-body">
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#keyword" data-toggle="tab">Keyword</a>
+                                                    </li>
+                                                    <li><a href="#year" data-toggle="tab">Year</a>
+                                                    </li>
+                                                    <li><a href="#month" data-toggle="tab">Month</a>
+                                                    </li>
+                                                    <li><a href="#insert" data-toggle="tab">Insert</a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Tab panes -->
+                                                <div class="tab-content" style="margin: 5%">
+                                                    <div class="tab-pane fade in active" id="keyword">
+                                                        <form method="post" action="/tab_view">
+                                                            <div class="form-group">
+                                                                <h3>Data Search (Keyword):</h3> <br/>
+
+                                                                <input type="hidden" name="type" value="keyword">
+
+                                                                <h4><label for="keyword"> keyword : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="keyword" name="keyword"
+                                                                       placeholder="input data (a,b,c)">
+
+                                                                <br/><br/>
+
+                                                                <input type="submit" value="Make Year Graph!"
+                                                                       class="btn btn-primary btn-block input-lg">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="year">
+                                                        <form method="post" action="/tab_view">
+                                                            <div class="form-group">
+                                                                <h3>Data Search (Year):</h3> <br/>
+
+                                                                <input type="hidden" name="type" value="year">
+
+                                                                <h4><label for="keyword"> keyword : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="keyword" name="keyword"
+                                                                       placeholder="input data (a,b,c)">
+
+                                                                <br/><br/>
+
+                                                                <h4><label for="year"> year : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="year" name="year"
+                                                                       placeholder="input year (yyyy)"> <br>
+
+                                                                <br/><br/>
+
+                                                                <input type="submit" value="Make Year Graph!"
+                                                                       class="btn btn-primary btn-block input-lg">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="month">
+                                                        <form method="post" action="/tab_view">
+                                                            <div class="form-group">
+                                                                <h3>Data Search (Month):</h3> <br/>
+
+                                                                <input type="hidden" name="type" value="month">
+
+                                                                <h4><label for="keyword"> keyword : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="keyword" name="keyword"
+                                                                       placeholder="input data (a,b,c)">
+
+                                                                <br/><br/>
+
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <h4><label for="year"> year : </label></h4>
+                                                                        <input type="text" class="form-control input-lg"
+                                                                               id="year" name="year"
+                                                                               placeholder="input year (yyyy)">
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <h4><label for="month"> month : </label></h4>
+                                                                        <input type="text" class="form-control input-lg"
+                                                                               id="month" name="month"
+                                                                               placeholder="input month (mm)"> <br>
+                                                                    </div>
+                                                                </div>
+
+                                                                <br/><br/>
+
+                                                                <input type="submit" value="Make Month Graph!"
+                                                                       class="btn btn-primary btn-block input-lg">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="insert">
+                                                        <form method="post" action="/insert">
+                                                            <div class="form-group">
+                                                                <h3>Data Insert (Keyword):</h3> <br/>
+
+                                                                <input type="hidden" name="type" value="insert">
+
+                                                                <h4><label for="keyword"> keyword : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="keyword" name="keyword"
+                                                                       placeholder="input data (a,b,c)">
+
+                                                                <br/><br/>
+
+                                                                <h4><label for="count"> count : </label></h4>
+                                                                <input type="text" class="form-control input-lg"
+                                                                       id="count" name="count"
+                                                                       placeholder="input count(1~100)">
+
+                                                                <br/><br/>
+
+                                                                <input type="submit" value="Insert Data !"
+                                                                       class="btn btn-primary btn-block input-lg">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- Tab panes -->
+                                            </div>
+                                            <!-- /.panel-body -->
+                                        </div>
+                                        <!-- /.panel -->
+                                    </div>
+                                    <!-- /.col-lg-6 -->
+                                </div>
+                                <!-- END FROM -->
+
+                                <!--CHART-->
+                                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                                <!--CHART-->
+
+                                <% include nav/gachon_copyright.ejs %>
+
+                            </div>
+                            <!-- END PAGE CONTENT INNER -->
+
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+            <!-- BEGIN QUICK SIDEBAR -->
+            <a href="javascript:;" class="page-quick-sidebar-toggler">
+                <i class="icon-login"></i>
+            </a>
+        </div>
+        <!-- END CONTAINER -->
+    </div>
+</div>
+<% include nav/footer_copyright.ejs %>
+</div>
+
+<% include nav/footer.ejs %>
+
+<!-- how to set data in chart-->
+<script>
+    //test
+    //window.addEventListener('load', function(){
+    //    alert('<%= tasks %>');
+    //});
+
+    var row = [];
+    var counts = [];
+
+    var tasks = <%- JSON.stringify(tasks) %>;
+
+    for (var i = 0; i < tasks.length; i++) {
+        row.push(tasks[i].row);
+        counts.push(tasks[i].count);
+    }
+
+    $(function () {
+        $('#container').highcharts({
+            title: {
+                text: 'Data Search Result',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Created by OCL',
+                x: -20
+            },
+            xAxis: {
+                categories: row
+            },
+            yAxis: {
+                title: {
+                    text: ' counts'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ' count'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: <%- JSON.stringify(keyword) %>,
+                data: counts
+            }]
+        });
+    });
+</script>
+<!-- how to set data in chart-->
+
+</body>
+</html>

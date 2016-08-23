@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 4.6
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <% include nav/header.ejs %>
+</head>
+<!-- END HEAD -->
+
+<body class="page-container-bg-solid">
+
+<div class="page-wrapper">
+    <% include nav/nav.ejs %>
+    <div class="page-wrapper-row full-height">
+        <div class="page-wrapper-middle">
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <!-- BEGIN PAGE CONTENT BODY -->
+                    <div class="page-content">
+                        <div class="container">
+                            <!-- BEGIN PAGE BREADCRUMBS -->
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <a href="#">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>General</span>
+                                </li>
+                            </ul>
+                            <!-- END PAGE BREADCRUMBS -->
+                            <!-- BEGIN PAGE CONTENT INNER -->
+                            <div class="page-content-inner">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="note note-success">
+                                            <h4>
+                                                오늘의 청소년 ? > 나의 삶의 질 측정 > 측정 결과
+                                            </h4>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-success">
+                                                    <div class="panel-heading">
+                                                        Info Panel
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div id="container"
+                                                             style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+                                                        <table id="datatable" style="display: none">
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>나의 데이터</th>
+                                                                <th>평균 데이터</th>
+                                                            </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                            <% for(i = 0; i < level.length; i++) { %>
+                                                            <tr>
+                                                                <th><%= level[i] %></th>
+                                                                <td><%= result[i] %></td>
+                                                                <td><%= avg[i] %></td>
+                                                            </tr>
+                                                            <% } %>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="panel-footer">
+                                                        Panel Footer
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-info">
+                                                    <div class="panel-heading">
+                                                        Info Panel
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div id="container2" style="width: 100%; margin: 0 auto"></div>
+                                                    </div>
+                                                    <div class="panel-footer">
+                                                        Panel Footer
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <br/>
+
+                                        <% include nav/gachon_copyright.ejs %>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- END PAGE CONTENT BODY -->
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+                <a href="javascript:;" class="page-quick-sidebar-toggler">
+                    <i class="icon-login"></i>
+                </a>
+            </div>
+            <!-- END CONTAINER -->
+        </div>
+    </div>
+
+    <% include nav/footer_copyright.ejs %>
+</div>
+
+<% include nav/footer.ejs %>
+
+<!-- CHART DATA-->
+<script>
+    //graph1
+    $(function () {
+        $('#container').highcharts({
+            data: {
+                table: 'datatable'
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '나의 삶의 질 수준은 어디쯤 일까요 ?'
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'score[max:100]'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                            this.point.y + ' ' + this.point.name.toLowerCase();
+                }
+            }
+        });
+    });
+
+    //graph2
+    var grades = <%- JSON.stringify(grade) %>;
+    $(function () {
+        $('#container2').highcharts({
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 15,
+                    beta: 15,
+                    viewDistance: 25,
+                    depth: 40
+                }
+            },
+
+            title: {
+                text: '초/중/고 학생들의 삶의질 수치 비교'
+            },
+
+            xAxis: {
+                categories: ['초등학생', '중학생', '고등학생']
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'QOL 지수 [MAX:100]'
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    depth: 40
+                }
+            },
+
+            series: [{
+                name: '삶의질수치',
+                data: grades,
+                stack: 'male'
+            }]
+        });
+    });
+
+</script>
+</body>
+</html>
